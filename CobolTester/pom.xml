@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.VeN-IT.AS400Test</groupId>
+  <artifactId>CobolTester</artifactId>
+  <version>1.0.7</version>
+  <packaging>jar</packaging>
+  
+  <name>CobolTester</name>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <build>
+    <finalName>CobolTester</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.4</version>
+        <executions>
+          <execution>
+            <id>package-jar-with-dependencies</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <appendAssemblyId>false</appendAssemblyId>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+              <archive>
+                <manifest>
+                  <mainClass>com/VeN_IT/AS400Test/CobolTester/AS400Test</mainClass>
+                </manifest>
+              </archive>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+	<dependency>
+	  <groupId>net.sf.jt400</groupId>
+	  <artifactId>jt400</artifactId>
+	  <version>6.7</version>
+	</dependency>
+	<dependency>
+	  <groupId>org.swinglabs</groupId>
+	  <artifactId>swing-layout</artifactId>
+	  <version>1.0.3</version>
+    </dependency>
+  </dependencies>
+  
+  <description>Cobol module tester application with Swing GUI. It can be used for testing all kind of Cobol modules except R-modules and screen programs.</description>
+  <organization>
+  	<name>VeN-IT Consulting Ltd.</name>
+  	<url>http://www.ven-it.com/</url>
+  </organization>
+</project>
